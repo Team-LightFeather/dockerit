@@ -13,7 +13,6 @@ docker cp $HOME/.aws/ $1:/$HOME/.aws
 docker cp $HOME/.gitconfig $1:/$HOME/.gitconfig
 docker cp $HOME/.vimrc $1:/$HOME/.vimrc
 docker cp $HOME/bin/docker_bash_profile $1:/$HOME/.bash_profile
-docker exec $1 chmod 700 $HOME/.ssh/id_rsa_lightfeather
 docker cp $1://etc/passwd /tmp/passwd
 grep -vP "\w+:\w:`id -u`" /tmp/passwd > /tmp/passwd2
 echo "`whoami`:x:`id -u`:`id -g`:,,,:/home/`whoami`:/bin/bash" >> /tmp/passwd2
